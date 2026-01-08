@@ -10,7 +10,7 @@ const server = http.createServer(app);
 // React(3000번 포트)에서 오는 요청을 허용한다는 설정
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "http://localhost:5173", "http://localhost:5174"],
     methods: ["GET", "POST"],
   },
 });
