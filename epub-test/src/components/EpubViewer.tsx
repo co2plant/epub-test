@@ -6,9 +6,10 @@ interface EpubViewerProps {
   location: string | number;
   locationChanged: (loc: string | number) => void;
   epubInitOptions?: Record<string, any>;
+  getRendition?: (rendition: any) => void;
 }
 
-const EpubViewer: React.FC<EpubViewerProps> = ({ url, location, locationChanged, epubInitOptions }) => {
+const EpubViewer: React.FC<EpubViewerProps> = ({ url, location, locationChanged, epubInitOptions, getRendition }) => {
   return (
     <div style={{ height: '100vh' }}>
       <ReactReader
@@ -16,6 +17,7 @@ const EpubViewer: React.FC<EpubViewerProps> = ({ url, location, locationChanged,
         location={location}
         locationChanged={locationChanged}
         epubInitOptions={epubInitOptions}
+        getRendition={getRendition}
       />
     </div>
   );
